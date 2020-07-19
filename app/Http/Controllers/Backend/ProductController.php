@@ -11,10 +11,10 @@ use App\Shop;
 
 class ProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('is_admin');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('is_admin');
+    // }
     /**
      * Display a listing of the resource.
      *
