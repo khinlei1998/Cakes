@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
             'name' =>"Cake3",
             'image'=>"/image/IMG_4887.JPG",
             'price'=>"  4400",
-            'category_id'=>2,
+            'category_id'=>3,
             'shop_id'=>2,
             'description'=>"This Homemade Strawberry Cake is full of sweet, fresh strawberry flavor! Moist strawberry cake ..."
           
@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'name' =>"Cake2",
-            'image'=>"/image/IMG_4869.JPG",
+            'image'=>"/image/IMG_4879.JPG",
             'price'=>"  5000",
             'category_id'=>1,
             'shop_id'=>3,
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
             'name' =>"Cake4",
             'image'=>"/image/IMG_4835.JPG",
             'price'=>"  7000",
-            'category_id'=>3,
+            'category_id'=>2,
             'shop_id'=>1,
             'description'=>"Enjoy your summer fruits and sangria together in cake form! This summer sangria cake is packed full"
           
