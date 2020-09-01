@@ -39,8 +39,10 @@
 
                     <div class="col-lg-4 col-md-4 portfolio-item filter-app wow fadeInUp">
                       <div class="portfolio-wrap">
+
                         <figure>
                           <img src="{{$product->image}}" width="100%" height="100%" class="img-fluid">
+                         @if(Auth::Check())
                           <button class="addcart btn btn-dark link-details" 
                             data-id="{{$product->id}}"
                             data-name="{{ $product->name }}"
@@ -48,7 +50,16 @@
                             data-image="{{ $product->image }}"
                           >
                           Add To Cart</button>
+                      @else
+                      <!-- <button class="addcart btn btn-dark link-details" >Add To Cart</button> -->
+                      <a href="{{ route('login') }}" class=" btn btn-dark link-details">Add To Cart</a>
+                      @endif
                         </figure>
+
+                        
+         
+          
+
 
                         <div class="portfolio-info">
                           <h6><a href="#">{{ $product->name }}</a></h6>

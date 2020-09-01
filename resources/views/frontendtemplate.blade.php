@@ -15,17 +15,17 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <!-- <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
-  <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+  <!-- <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
+  <link href="{{asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{secure_asset('frontend/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
 
   <style type="text/css">
 
@@ -62,19 +62,20 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="/">Home</a></li>
-        
-         
+         @if( Auth::Check())
+          <input type="hidden" id="userid" value="{{Auth::user()->id}}">
+         @endif
           <li><a href="#products">Product List</a></li>
         
           <li><a href="#contact">Contact</a></li>
-
+          @if(Auth::Check())
           <li class="item">
             <a href="{{route('orders.index')}}">
               <span class="notify-badge"><p id="count"></p></span>
               <i class="fas fa-shopping-cart fa-2x"></i>
             </a>
           </li>
-          
+          @endif
             @guest
            <li class="nav-item">
             <a class="nav-link" href="{{route('login')}}">Login</a>
@@ -83,7 +84,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('register')}}">Register</a>
-
+           
 
           </li>
           @else
@@ -327,31 +328,40 @@
   <!-- JavaScript Libraries -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-  <script src="{{secure_asset('frontend/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/easing/easing.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/wow/wow.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/isotope/isotope.pkgd.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/lightbox/js/lightbox.min.js')}}"></script>
-  <script src="{{secure_asset('frontend/lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/easing/easing.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/superfish/hoverIntent.js')}}"></script>
+  <script src="{{asset('frontend/lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/wow/wow.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/counterup/counterup.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/isotope/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/lightbox/js/lightbox.min.js')}}"></script>
+  <script src="{{asset('frontend/lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="{{secure_asset('frontend/contactform/contactform.js')}}"></script>
+  <script src="{{asset('frontend/contactform/contactform.js')}}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="{{secure_asset('frontend/js/main.js')}}"></script>
+  <script src="{{asset('frontend/js/main.js')}}"></script>
 
 
   <script type="text/javascript">
 
     $(document).ready(function(){
+      var userid=$("#userid").val();
+    if(userid){
       showcount();
-      $('.addcart').click(function(){
+    }
+    
+    
+    
+     
+      $('.addcart').click(function(e){
+        // e.preventDefault();
+        
 
         var product_id = $(this).data('id');
         var product_name = $(this).data('name');

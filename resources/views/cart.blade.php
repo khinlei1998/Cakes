@@ -16,17 +16,17 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{secure_asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+  <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{secure_asset('frontend/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
 
   <!-- ==s=====================================================
     Theme Name: BizPage
@@ -147,13 +147,12 @@
           </div>
         </div>
         <div class="text-md-center">
-         @if(Auth::check())
+      
          <form action="" method="post" accept-charset="utf-8" id="checkout" class="forms">      
           <a href="#"  data-toggle='modal' class=" btn btn-block btn-success" id="checkout" >Check Out</a>
           
-          @else
-          <a href="{{route('login')}}"  data-toggle='modal' class=" btn btn-block btn-success">Check Out</a>
-          @endif
+        
+         
 
         
            
@@ -326,55 +325,15 @@
   <script src="{{asset('frontend/lib/jquery/jquery.min.js')}}"></script>
 
 
-  <!-- <script type="text/javascript">
-    $(document).ready(function(){
-
-      //alert('hi');
-      $(".searchterm").on("click", function(event){
-          //console.log('clicked');
-          $('#all').hide();
-          var id = $(this).data('id');
-          $html = '';
-
-          $.ajax({
-            url: "result/"+id, 
-            method: "GET",
-            data:{id : id},
-            success:function(data){
-                console.log(JSON.parse(JSON.stringify(data))); 
-
-                for(var i=0; i<data.length-1; i++){
-
-                  $html += '<div class="portfolio-wrap">'+
-                      '<figure>'+
-                        '<img src="'+data[i].image+'" width="100%" height="100%" class="img-fluid">'+
-                        '<a href="#" class="btn btn-dark link-details" data-title="App 1">Add To Cart</a>'+
-                      '</figure>'+
-
-                      '<div class="portfolio-info">'+
-                        '<h4>'+data[i].name+'</h4>'+
-                        '<p>'+data[i].price+'</p>'+
-                      '</div></div>';
-                }
-
-                $('.searchresult').html($html);
-                
-            }  
-
-
-        });
-
-      });
-
-    })
-  </script> -->
+  
 
   <script type="text/javascript">
 
     $(document).ready(function(){
-
+      // alert('hh')
+        
+        // localStorage.clear("productCart");
         showtable();
-
 
 
         //Increase
@@ -463,6 +422,7 @@
       //Show Table
       function showtable(){
         var mycart=localStorage.getItem('productCart');
+        console.log(mycart)
         if (mycart){
 
           var mycartobj=JSON.parse(mycart);
@@ -517,7 +477,7 @@
       $('#checkout').click(function(e){
      
          e.preventDefault();
-         alert('Checkout Successfully');
+        //  alert('Checkout Successfully');
       
       
          
@@ -569,6 +529,7 @@
   </script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
 </body>
 </html>
