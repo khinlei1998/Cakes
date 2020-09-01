@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_date');
             $table->string('total');
             $table->unsignedBigInteger('user_id');
-            $table->string('status');
+            $table->integer('status');
             $table->timestamps();
         });
     }

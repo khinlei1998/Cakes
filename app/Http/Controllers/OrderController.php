@@ -80,6 +80,7 @@ class OrderController extends Controller
             'voucherno'=>$voucherno,
             'order_date' => $order_date,
             'total'=>$total,
+            'status'=>0,
             'user_id'=>Auth::user()->id,
         ]);
         

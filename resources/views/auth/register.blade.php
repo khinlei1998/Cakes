@@ -14,7 +14,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -24,14 +24,14 @@
                     <form method="POST" action="{{ route('register') }}"  enctype="multipart/form-data">
                         @csrf
                         <div class="row text-center">
-         <div class="col-md-4"></div>
-     <div class="col-md-4 imgholder">
-             <label for="owner_image">
-                 
-             </label>
-                 <input type="hidden" class="" onchange="previewFile()" name="image" id="owner_image"/>
-     </div>
-    </div>
+                                <div class="col-md-4"></div>
+                                    <div class="col-md-4 imgholder">
+                                    <label for="owner_image">
+                    
+                                    </label>
+                                    <input type="hidden" class="" onchange="previewFile()" name="image" id="owner_image"/>
+                                    </div>
+                                </div>
 
 
 

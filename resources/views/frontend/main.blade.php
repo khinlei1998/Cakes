@@ -1,6 +1,9 @@
 @extends('frontendtemplate')
 
 @section('category')
+<style>
+
+</style>
 <div class="col-md-3">
             <h6>Choose Category</h6>
            <ul class="list-group">

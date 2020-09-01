@@ -27,8 +27,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
-
+  
+     // protected $redirectTo ='/';
+     protected function authenticated($request, $user)
+     {
+         if(Auth::user()->id =='1') {
+             return redirect()->intended('/backend/order');
+         }
+         return redirect('/');
+     }  
     /**
      * Create a new controller instance.
      *
