@@ -177,7 +177,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{secure_asset('dist/js/adminlte.min.js')}}"></script>
+<script src="{{secure_asset('dist/js/adminlte.min.js"></script>
 <!-- page script -->
 <!-- sweet alert -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>

@@ -26,7 +26,7 @@ class ProductController extends Controller
 
 
        
-      $products = Product::paginate(5);
+      $products = Product::all();
 
        
        return view('backend.product.read', compact('products'));
@@ -91,7 +91,7 @@ class ProductController extends Controller
             'description' => request('description'),
         ]);
 
-        return redirect()->route('admin.product.index')->with("notification", 'Created Successfully');;
+        return redirect()->route('admin.product.index')->with("notification", 'Created Successfully');
 
     }
 

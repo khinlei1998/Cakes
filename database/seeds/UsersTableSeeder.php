@@ -17,8 +17,8 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'address'=>'ygn',
             'phone'=>'0877',
-            'image'=> 'default',
-            'role_id'=> 2,
+            'image'=> 'https://s3.amazonaws.com/37assets/svn/765-default-avatar.png',
+            'role_id'=> 1,
         ]);
     }
 }
