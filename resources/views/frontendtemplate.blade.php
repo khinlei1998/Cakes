@@ -18,7 +18,7 @@
   <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <!-- <link href="{{secure_('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
+  <!-- <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
   <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
