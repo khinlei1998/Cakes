@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- Font Awesome Icons -->
-   <link rel="stylesheet" href="{{  secure_asset('plugins/fontawesome-free/css/all.min.css')}}">
+   <link rel="stylesheet" href="{{  asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ secure_asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="{{ secure_asset('/css/app.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/app.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"  >
 </head>
 <body class="hold-transition sidebar-mini">
@@ -173,15 +173,15 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ secure_asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{ secure_asset('dist/js/adminlte.min.js')}}"></script>
+<script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
 <!-- page script -->
 <!-- sweet alert -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="{{ secure_asset('js/app.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 
 
 

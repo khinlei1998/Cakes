@@ -72,9 +72,5 @@
 </div>
 @endsection
 <script>
-//  $(document).ready(function(){
-//      $("#btnsubmit").click(function(){
-//          alert('login')
-//      })
-//  })
+
 </script>
