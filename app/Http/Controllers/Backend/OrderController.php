@@ -31,12 +31,7 @@ class OrderController extends Controller
                 ->where('status', '=', 1)
                 ->get();
 
-            //     $users = DB::table('users')
-            // ->join('contacts', 'users.id', '=', 'contacts.user_id')
-           
-            // ->select('users.*', 'contacts.phone', 'orders.price')
-            // ->get();
-
+             
 
              $allorders = DB::table('orders')
             ->join('users', 'users.id', '=', 'orders.user_id')

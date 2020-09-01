@@ -15,7 +15,7 @@
   @csrf
   <div class="row text-center">
       <div class="col-md-4"></div>
-     
+    
       <div class="col-md-4 imgholder">
            <label for="owner_image">
             <img src="{{$user->image}}"  class="previewProfile"

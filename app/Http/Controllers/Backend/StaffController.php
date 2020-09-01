@@ -66,7 +66,7 @@ class StaffController extends Controller
             $image = '/image/'.$name;
         }
         else{
-            $image='/image/default.jpg';
+            $image='image/default.jpg';
         }
 
         User::create([

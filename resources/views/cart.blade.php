@@ -16,17 +16,17 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
+  <link href="{{secure_asset('frontend/css/style.css')}}" rel="stylesheet">
 
   <!-- ==s=====================================================
     Theme Name: BizPage
@@ -98,7 +98,7 @@
            
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <!-- <img src="{{asset('frontend/img/intro-carousel/3.jpg')}}"class="d-block w-100">  -->
+                <!-- <img src="{{secure_asset('frontend/img/intro-carousel/3.jpg')}}"class="d-block w-100">  -->
                 <img src="https://images.pexels.com/photos/4553118/pexels-photo-4553118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"class="d-block w-100">
 
               </div>
@@ -303,26 +303,26 @@
 
   <!-- JavaScript Libraries -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script src="{{asset('frontend/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/easing/easing.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{asset('frontend/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/wow/wow.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/isotope/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/lightbox/js/lightbox.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/easing/easing.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/superfish/hoverIntent.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/wow/wow.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/counterup/counterup.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/isotope/isotope.pkgd.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/lightbox/js/lightbox.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="{{asset('frontend/contactform/contactform.js')}}"></script>
+  <script src="{{secure_asset('frontend/contactform/contactform.js')}}"></script>
 
   <!-- Template Main Javascript File -->
 
-  <script src="{{asset('frontend/js/main.js')}}"></script>
-  <script src="{{asset('frontend/lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{secure_asset('frontend/js/main.js')}}"></script>
+  <script src="{{secure_asset('frontend/lib/jquery/jquery.min.js')}}"></script>
 
 
   
