@@ -18,7 +18,7 @@
   <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
+  <!-- <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
   <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
@@ -322,6 +322,8 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
   <script src="{{secure_asset('frontend/lib/jquery/jquery.min.js')}}"></script>
   <script src="{{secure_asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
   <script src="{{secure_asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

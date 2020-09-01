@@ -19,7 +19,7 @@
   <link href="{{secure_asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
+  <!-- <link href="{{secure_asset('fontawesome/css/all.min.css')}}" rel="stylesheet"> -->
   <link href="{{secure_asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{secure_asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
@@ -98,7 +98,9 @@
            
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{secure_asset('frontend/img/intro-carousel/3.jpg')}}"class="d-block w-100"> 
+                <!-- <img src="{{secure_asset('frontend/img/intro-carousel/3.jpg')}}"class="d-block w-100">  -->
+                <img src="https://img.wallpapersafari.com/desktop/1920/1080/25/78/woGYlC.jpg"class="d-block w-100">
+
               </div>
               
               
@@ -301,6 +303,8 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
   <script src="{{secure_asset('frontend/lib/jquery/jquery.min.js')}}"></script>
   <script src="{{secure_asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
   <script src="{{secure_asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
