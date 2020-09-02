@@ -123,33 +123,34 @@
         </header>
 
         <div class="row">
-
-          <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Sub Total</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-          </table>
-        </div>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Sub Total</th>
+                      <th>Delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  
+              </tbody>
+            </table>
+          </div>
 
 
             
-          </div>
+          
         </div>
         <div class="text-md-center">
       
-         <form action="" method="post" accept-charset="utf-8" id="checkout" class="forms">      
-          <a href="#"  data-toggle='modal' class=" btn btn-block btn-success" id="checkout" >Check Out</a>
+          <form action="" method="post" accept-charset="utf-8" id="checkout" class="forms">      
+            <a href="#"  data-toggle='modal' class=" btn btn-block btn-success" id="checkout" >Check Out</a>
+        </div>
           
         
          

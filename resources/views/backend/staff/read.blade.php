@@ -13,7 +13,13 @@
               </div>
               </div>
         @endif
-
+        <style>
+  .btnadd{
+    margin-left:60%
+  }
+ 
+ 
+</style>
 <body>
  <!-- Main content -->
      
@@ -23,11 +29,12 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Product Detail Page</h3>
+                  <h3 class="card-title">User Detail Page</h3>
 				           <a href="{{route('admin.staff.create')}}"  class="btn btn-primary btn-circle btnadd" >Add Staff</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div class="table-responsive">
                   <table id="table" class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -77,7 +84,8 @@
                       </tr>
                     </tfoot>
                   </table>
-                  <div class="btnadd">
+                </div>
+                  <div class="pagi" style="float:right">
                     
                     {{ $users->links() }}
                   <div>

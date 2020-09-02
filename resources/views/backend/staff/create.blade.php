@@ -5,11 +5,13 @@
 	@csrf
 	<div class="row text-center">
    		<div class="col-md-4"></div>
-	            <div class="col-md-4 imgholder">
-                     <label for="owner_image">  
-                    <img src="https://via.placeholder.com/300.png?text=upload+profile"  class="previewProfile" alt="">
+	            <div class="col-md-4 ">
+                     <label for="">  
+                    <!-- <img src="https://via.placeholder.com/300.png?text=upload+profile"  class="previewProfile" alt=""> -->
                      </label>
-                    <input type="file" class="" onchange="previewFile()" name="image" id="owner_image"/>
+                    <!-- <input type="file" class="" onchange="previewFile()" name="image" id="owner_image"/> -->
+                    <input type="file" class="form-control" name="image" placeholder="Choose File"/>
+
                 </div>
  	    </div>
          <div class="row">
