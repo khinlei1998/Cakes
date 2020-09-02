@@ -386,7 +386,7 @@ h6 {
   padding: 0 8px 10px 8px;
   text-decoration: none;
   display: inline-block;
-  color:black;
+  color: #F14343;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -396,7 +396,7 @@ h6 {
 
 .nav-menu li:hover > a,
 .nav-menu > .menu-active > a {
-  color:white;
+  color:black;
 }
 
 .nav-menu > li {
@@ -478,7 +478,7 @@ h6 {
 }
 
 #mobile-nav ul li a {
-  color: #fff;
+  color: #F14343;
   font-size: 13px;
   text-transform: uppercase;
   overflow: hidden;
@@ -501,7 +501,7 @@ h6 {
 }
 
 #mobile-nav ul li.menu-active a {
-  color: #18d26e;
+  color: white;
 }
 
 #mobile-nav ul .menu-has-children i {
