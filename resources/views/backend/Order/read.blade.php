@@ -31,71 +31,74 @@
                 </div>
                 <!-- /.card-header -->
 					<div class="card-body" id="order">
-					<table id="table" class="table table-bordered table-striped">
-						<thead>
-						<tr>
+						<div class="table-responsive">
+							<table id="table" class="table table-bordered table-striped">
+								<thead>
+								<tr>
 
-						
-							<th>No</th>
-							<th>User Name</th>
-							<th>Address</th>
-							<th>phone</th>
-							<th>Voucherno</th>
-							<th>Order Date</th>
-							<th>Total</th>
-							
-							<th>Actions</th>
-						</tr>
-						</thead>
-						<tbody>
-						@php 
-							$i = 1;
-						@endphp
-						
-						@foreach($allorders as $order)
-						<tr>
-							<td>{{ $i++ }}</td>
-							<td>{{$order->name}}</td>
-							<td>{{$order->address}}</td>
-							<td>{{$order->phone}}</td>
-							<td>{{$order->voucherno}}</td>
-							<td>{{$order->order_date}}</td>
-							<td>{{$order->total}}</td>
-							<td><a href="{{route('admin.order.show', $order->voucherno)}}" class="btn btn-secondary">Details</a>
-							
-							<form  style="display: inline;" action="{{route('orders.update',$order->id)}}" method="post" id="orderform" >
-									@method('PATCH')
-									@csrf
 								
+									<th>No</th>
+									<th>User Name</th>
+									<th>Address</th>
+									<th>phone</th>
+									<th>Voucherno</th>
+									<th>Order Date</th>
+									<th>Total</th>
+									
+									<th>Actions</th>
+								</tr>
+								</thead>
+								<tbody>
+								@php 
+									$i = 1;
+								@endphp
 								
-									<input type="submit" class="btn btn-success" value="Confirm" >
-							</form>
-							
-							</td>
-							
-						</tr>
-						@endforeach
-		
-						</tbody>
-						<tfoot>
-						<tr>
-						<th>No</th>
-							<th>User Name</th>
-							<th>Address</th>
-							<th>phone</th>
-							<th>Voucherno</th>
-							<th>Order Date</th>
-							<th>Total</th>
-							<th>Actions</th>
-						</tr>
-						</tfoot>
-					</table>
+								@foreach($allorders as $order)
+								<tr>
+									<td>{{ $i++ }}</td>
+									<td>{{$order->name}}</td>
+									<td>{{$order->address}}</td>
+									<td>{{$order->phone}}</td>
+									<td>{{$order->voucherno}}</td>
+									<td>{{$order->order_date}}</td>
+									<td>{{$order->total}}</td>
+									<td><a href="{{route('admin.order.show', $order->voucherno)}}" class="btn btn-secondary">Details</a>
+									
+									<form  style="display: inline;" action="{{route('orders.update',$order->id)}}" method="post" id="orderform" >
+											@method('PATCH')
+											@csrf
+										
+										
+											<input type="submit" class="btn btn-success" value="Confirm" >
+									</form>
+									
+									</td>
+									
+								</tr>
+								@endforeach
+				
+								</tbody>
+								<tfoot>
+								<tr>
+								<th>No</th>
+									<th>User Name</th>
+									<th>Address</th>
+									<th>phone</th>
+									<th>Voucherno</th>
+									<th>Order Date</th>
+									<th>Total</th>
+									<th>Actions</th>
+								</tr>
+								</tfoot>
+							</table>
+						</div>
 					<div class="float-right">
 					
 					</div>
 					</div>
 				
 				<div class="card-body" id="confirmorder">
+				<div class="table-responsive">
                   <table id="table" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -144,7 +147,8 @@
 						<th>Actions</th>
                     </tr>
                     </tfoot>
-                  </table>
+				  </table>
+				</div>
                   <div class="float-right">
                 
                   </div>

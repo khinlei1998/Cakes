@@ -13,6 +13,11 @@
               </div>
               </div>
         @endif
+        <style>
+          .btnadd{
+            margin-left:60%
+          }
+        </style>
       <!-- Content Wrapper. Contains page content -->
      
         <!-- Main content -->

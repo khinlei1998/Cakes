@@ -118,7 +118,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <!-- <img src="{{asset('frontend/img/intro-carousel/3.jpg')}}"class="d-block w-100">  -->
-                <img src="https://img.wallpapersafari.com/desktop/1920/1080/25/78/woGYlC.jpg"class="d-block w-100">
+                <img src="https://images.pexels.com/photos/4553118/pexels-photo-4553118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"class="d-block w-100">
               
               </div>
               

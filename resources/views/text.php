@@ -1,465 +1,187 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>Cake Order System</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Cake Order System</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="{{asset('frontend/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('frontend/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
-
-  <style type="text/css">
-
-    .notify-badge{
-      position: absolute;
-      right:-5px;
-      top:0px;
-      background:red;
-      text-align: center;
-      border-radius: 15px;
-      color:white;
-      padding:3px 3px;
-      font-size:10px;
-  }
-
-  </style>
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="{{  asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('/css/app.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"  >
 </head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars">::before</i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../../index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
 
-<body>
-
-  <!--==========================
-    Header
-  ============================-->
-  <header id="header">
-    <div class="container-fluid">
-
-      <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">C<small>AKE SHOP</small></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       </div>
+    </form>
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+  
+  </nav>
+  <!-- /.navbar -->
 
-          <li class="item">
-            <a href="{{route('orders.index')}}">
-              <span class="notify-badge"><p id="count"></p></span>
-              <i class="fas fa-shopping-cart fa-2x"></i>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+    <img src="{{auth::user()->image}}" class="img-circle elevation-2" style="width:50px; height:45px; margin-left:30px" alt="User Image">
+      <span class="brand-text font-weight-light">{{auth::user()->name}}</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+     
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="mb-2 nav-item has-treeview">
+            <a href="{{route('admin.staff.index')}}" class="nav-link">
+            <img src="https://img.icons8.com/officel/30/000000/change-user-male.png"/>
+              <p class="target">
+                User
+                
+              </p>
+            </a>
+           
+          </li>
+          <li class="mb-2 nav-item has-treeview">
+            <a href="{{route('admin.category.index')}}" class="nav-link">
+            <img src="https://img.icons8.com/color/30/000000/multiple-choice.png"/>
+              <p class="target">
+                Category
+               
+              </p>
+            </a>
+           
+          </li>
+          
+          <li class="mb-2 nav-item has-treeview">
+            <a href="{{route('admin.shop.index')}}" class="nav-link">
+            <img src="https://img.icons8.com/dusk/30/000000/shop.png"/>
+              <p class="target">
+                Shop
+              
+              </p>
+            </a>
+           
+          </li>
+          <li class="mb-2 nav-item has-treeview">
+            <a href="{{route('admin.product.index')}}" class="nav-link">
+            <img src="https://img.icons8.com/doodle/30/000000/cake--v1.png"/>
+              <p class="target">
+                Product
+               
+              </p>
+            </a>
+           
+          </li>
+          <li class="mb-2 nav-item has-treeview">
+            <a href="{{route('admin.order.index')}}" class="nav-link">
+            <img src="https://img.icons8.com/dusk/30/000000/list.png"/>
+              <p class="target">
+                Order
+               
+              </p>
+            </a>
+           
+          </li>
+          <li class="mb-2nav-item">
+            <a href="{{route('logout')}}" class="nav-link">
+            <img src="https://img.icons8.com/nolan/30/logout-rounded-up.png"/>
+              <p class="target">
+                Log out
+                
+              </p>
             </a>
           </li>
-          
-            @guest
-           <li class="nav-item">
-            <a class="nav-link" href="{{route('login')}}">Login</a>
-
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('register')}}">Register</a>
-
-
-          </li>
-          @else
-                <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-          @endguest
         </ul>
-      </nav><!-- #nav-menu-container -->
+      </nav>
+      <!-- /.sidebar-menu -->
     </div>
-  </header><!-- #header -->
+    <!-- /.sidebar -->
+  </aside>
 
-    <!-- carousel -->
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-           
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{asset('frontend/img/intro-carousel/5.jpg')}}"class="d-block w-100"> 
-              </div>
-              
-             
-            </div>
-           
-            
-          </div>
-
-  <!-- #intro -->
-
-  <main id="main">
-
-    <!--==========================
-      Portfolio Section
-    ============================-->
-    <section id="products"  class="section-bg" >
-      <div class="container">
-
-          
-
-        <div class="row">
-
-        
-            @yield('category')
-            @yield('product')
-
-            </div>
-
-
-            
-          </div>
-        </div>
-
-     
- 
-
-      </div>
-    </section><!-- #portfolio -->
-
-
-    <!--==========================
-      About Us Section
-    ============================-->
-   
-
-    <!--==========================
-      Services Section
-    ============================-->
-   
-    <!--==========================
-      Call To Action Section
-   
-
-==========================
-      Team Section
-    ============================-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
     
-
-    <!--==========================
-      Contact Section
-    ============================-->
-    <section id="contact" class="section-bg wow fadeInUp">
-      <div class="container">
-
-        <div class="section-header">
-          <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-
-        <div class="row contact-info">
-
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
-              <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
-      </div>
-    </section><!-- #contact -->
-
-  </main>
-
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3>BizPage</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#intro">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#services">Servicess</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>
-
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
-            </form>
-          </div>
-
-        </div>
-      </div>
+    <div class="content-header">
+      <div class="container-fluid">
+       
+      @yield('content_wrapper')
+    
+          
+        
+      </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content-header -->
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-        -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+    <!-- Main content -->
+   
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.0.3
     </div>
-  </footer><!-- #footer -->
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below i you want to use a preloader -->
-  <!-- <div id="preloader"></div> -->
-
-  <!-- JavaScript Libraries -->
-  <script src="{{asset('frontend/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/easing/easing.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{asset('frontend/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/wow/wow.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/isotope/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/lightbox/js/lightbox.min.js')}}"></script>
-  <script src="{{asset('frontend/lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="{{asset('frontend/contactform/contactform.js')}}"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="{{asset('frontend/js/main.js')}}"></script>
-
-  <!-- <script type="text/javascript">
-    $(document).ready(function(){
-
-      //alert('hi');
-      $(".searchterm").on("click", function(event){
-          //console.log('clicked');
-          $('#all').hide();
-          var id = $(this).data('id');
-          $html = '';
-
-          $.ajax({
-            url: "result/"+id, 
-            method: "GET",
-            data:{id : id},
-            success:function(data){
-                console.log(JSON.parse(JSON.stringify(data))); 
-
-                for(var i=0; i<data.length-1; i++){
-
-                  $html += '<div class="portfolio-wrap">'+
-                      '<figure>'+
-                        '<img src="'+data[i].image+'" width="100%" height="100%" class="img-fluid">'+
-                        '<a href="#" class="btn btn-dark link-details" data-title="App 1">Add To Cart</a>'+
-                      '</figure>'+
-
-                      '<div class="portfolio-info">'+
-                        '<h4>'+data[i].name+'</h4>'+
-                        '<p>'+data[i].price+'</p>'+
-                      '</div></div>';
-                }
-
-                $('.searchresult').html($html);
-                
-            }  
-
-
-        });
-
-      });
-
-    })
-  </script> -->
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-
-      showcount();
-
-      //Add To Cart
-      $('.addcart').click(function(){
-
-        debugger;
-        var product_id = $(this).data('id');
-        var product_name = $(this).data('name');
-        var product_price = $(this).data('price');
-        var product_image = $(this).data('image');
-
-        var status = false;
-
-        var product={
-            id:product_id,
-            product_name:product_name,
-            product_price:product_price,
-            product_image:product_image,
-            quantity:1,
-        };
-
-        var mycart=localStorage.getItem('productCart');
-
-        if(!mycart){
-             mycart='{"productlist":[]}';
-        }
-
-        var mycartobj=JSON.parse(mycart);
-        // convert text to js obj
-
-        $.each(mycartobj.productlist,function(i,v)
-        {
-            if(v){
-                if(v.id==product_id){
-                    status=true;
-                    v.quantity++;
-                }
-            }
-        })
-
-        if(!status){
-            mycartobj.productlist.push(product);
-        }
-
-        console.log(mycartobj.productlist);
-
-        localStorage.setItem('productCart',JSON.stringify(mycartobj));
-        // obj to string
-
-        showcount();
-
-      })
-
-      function showcount(){
-        var mycart=localStorage.getItem('productCart');
-  
-        if (mycart){
-          mycartobj=JSON.parse(mycart);
-          var total=0;
-          $.each(mycartobj.productlist,function(i,v){
-
-            if(v){
-
-              total+=parseInt(v.quantity);
-
-            }
-
-          });
-
-          $("#count").html(total);
-        }
-      }
-    })
-
-  </script>
+<!-- jQuery -->
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
+<!-- page script -->
+<!-- sweet alert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 
 
 

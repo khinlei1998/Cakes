@@ -4,7 +4,7 @@
 <div class="card mb-3"  >
   <div class="row no-gutters">
     <div class="col-md-6 " style="padding: 2px;">
-     <img src="{{$orderdetail->image}}" style="height:180px; width:276px; padding: 2px; margin-left: 10px;">
+     <img src="{{$orderdetail->image}}" style="height:212px; width:319px; padding: 2px; margin-left: 10px;">
     </div>
 	<div class="col-md-6">
       <div class="card-body">

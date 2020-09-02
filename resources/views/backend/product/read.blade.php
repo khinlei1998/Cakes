@@ -13,6 +13,12 @@
 </div>
 </div>
 @endif
+<style>
+  .btnadd{
+    margin-left:60%
+  }
+ 
+</style>
 <body >
  
       <!-- Content Wrapper. Contains page content -->
@@ -28,67 +34,70 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="table" class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-					<th>No</th>
-						<th>Name</th>
-						<th>Image</th>
-						<th>Price</th>
-						<th>Category</th>
-						<th>Description</th>
-						<th>Action</th>
-                    </tr>
-                    </thead>
-					<tbody>
-					
-					@php 
-						$i = 1;
-					@endphp
+                  <div class="table-responsive">
+                    <table id="table" class="table table-bordered table-striped">
+                      <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                
+                          @php 
+                            $i = 1;
+                          @endphp
 
-					@foreach($products as $product)
-					
-					<tr>
-						<td>{{ $i++ }}</td>
-						<td>{{$product->name}}</td>
-						
-						<td>
-							<img src="{{$product->image}}" width="80" height="80">
-						</td>
-						<td>{{$product->price}}</td>
-						<td>{{$product->category->name}}</td>
-						
-						<td>{{$product->description}}</td>
-						<td>
-					<a href="{{route('admin.product.edit', $product->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i> &nbsp; Edit
-						</a>
-
-
-
-							<form style="display: inline;" action="{{route('admin.product.destroy',$product->id)}}" method="post">
-								@method('DELETE')
-								@csrf
-
-									<button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete </button>
-								</form>
-						</td>
-					</tr>
-					@endforeach
+                            @foreach($products as $product)
+                
+                          <tr>
+                            <td>{{ $i++ }}</td>
+                            <td>{{$product->name}}</td>
+                            
+                            <td>
+                              <img src="{{$product->image}}" width="80" height="80">
+                            </td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->category->name}}</td>
+                            
+                            <td> {{ str_limit($product->description, 50) }}</td>
+                           
+                            <td>
+                              <a href="{{route('admin.product.edit', $product->id)}}" style=""class="btn btn-success"><i class="fas fa-pencil-alt"></i> &nbsp; Edit
+                                </a>
 
 
-				</tbody>
-                    <tfoot>
-                    <tr>
-                      <th>No</th>
-						<th>Name</th>
-						<th>Image</th>
-						<th>Price</th>
-						<th>Category</th>
-						<th>Description</th>
-						<th>Action</th>
-                    </tr>
-                    </tfoot>
-                  </table>
+
+                              <form style="float:left" action="{{route('admin.product.destroy',$product->id)}}" method="post">
+                                @method('DELETE')
+                                @csrf
+
+                                  <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete </button>
+                                </form>
+                            </td>
+                          </tr>
+                            @endforeach
+
+
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>No</th>
+                          <th>Name</th>
+                          <th>Image</th>
+                          <th>Price</th>
+                          <th>Category</th>
+                          <th>Description</th>
+                          <th>Action</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                   <div class="float-right">
                  
                   </div>
